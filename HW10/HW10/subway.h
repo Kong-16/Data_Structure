@@ -3,6 +3,28 @@
 #include <iostream>
 using namespace std;
 
+class Data {
+public:
+	int num;
+	int value;
+};
+
+class Minheap {
+private:
+	void ChangeSize1D(int);
+	Data* heap;
+	int heapSize;
+	int capacity;
+public:
+	Minheap(int);
+	void Push(const Data&);
+	void Pop();
+	bool IsEmpty() { return heapSize == 0; }
+	Data Top() { return heap[1]; }
+	friend ostream& operator <<(ostream&, Minheap&);
+};
+
+
 class Node {
 	int lineNum;
 	string lineName;
@@ -16,6 +38,7 @@ class Graph {
 	int** weight; //이차원 배열 동적할당을 위한 이중포인터.
 	Node* vertex;
 	int* path;
+	int* dist;
 	int capacity;
 	int vertexNum;
 public:
@@ -25,7 +48,7 @@ public:
 	int search(int num, string name);
 	void shortestPath(int, int);
 	void searchPath(int, string, int, string);
-	int getWeight(int m, int n) { return weight[m][n]; }
+	int* getdist() { return dist; }
 	friend ostream& operator <<(ostream& os, Node n);
 };
 

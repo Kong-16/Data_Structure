@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="hw10.cpp" />
+    <ClCompile Include="minheap.h" />
     <ClCompile Include="subway.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
